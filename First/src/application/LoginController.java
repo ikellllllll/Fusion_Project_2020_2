@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -22,6 +23,12 @@ public class LoginController {
 	private	PasswordField	password;
 	@FXML
 	private Button			btnLogin;
+	@FXML
+	private CheckBox		admin;
+	@FXML
+	private CheckBox		remember_ID;
+	@FXML
+	private Button			btnRegister;
 	
 	public void Login(ActionEvent event) throws Exception {
 		if(ID.getText().equals("user") && password.getText().equals("pass")){
@@ -34,6 +41,25 @@ public class LoginController {
 		if(event.getCode() == KeyCode.ENTER) {
 			Login(new ActionEvent());
 		}
+	}
+	
+	public void Register(ActionEvent event) throws Exception {
+		System.out.println("Register Event");
+		
+		Parent root;
+		Stage stage = new Stage();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Register.fxml"));
+		
+		try {
+			root = loader.load();
+			
+			stage.setScene(new Scene(root));
+			stage.show();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	private void showMainPage() throws IOException {

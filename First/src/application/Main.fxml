@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="288.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="288.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <BorderPane prefHeight="288.0" prefWidth="554.0">
-         <left>
-            <Accordion prefHeight="252.0" prefWidth="140.0" BorderPane.alignment="CENTER">
-              <panes>
-                <TitledPane animated="false" prefHeight="197.0" prefWidth="165.0" text="영화">
-                     <content>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label onMouseClicked="#labelClickHandler" text="현재 상영작" />
-                              <Label onMouseClicked="#labelClickHandler" text="상영 예정작" />
-                              <Label onMouseClicked="#labelClickHandler" text="Label" />
-                           </children>
-                        </VBox>
-                     </content>
-                </TitledPane>
-                <TitledPane animated="false" text="예매">
-                     <content>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Label" />
-                              <Label text="Label" />
-                           </children>
-                        </VBox>
-                     </content>
-                </TitledPane>
-                <TitledPane animated="false" prefHeight="208.0" prefWidth="0.0" text="영화관">
-                     <content>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Label" />
-                              <Label text="Label" />
-                              <Label text="Label" />
-                           </children>
-                        </VBox>
-                     </content>
-                </TitledPane>
-              </panes>
-            </Accordion>
-         </left>
-         <top>
-            <Label text="user name" BorderPane.alignment="CENTER" />
-         </top>
-      </BorderPane>
+      <Accordion prefHeight="288.0" prefWidth="100.0">
+        <panes>
+            <TitledPane animated="false" prefHeight="219.0" prefWidth="142.0" text="예매">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="195.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="7.0" onMouseClicked="#bookClick" text="예매하기" />
+                        <Label layoutX="9.0" layoutY="22.0" onMouseClicked="#timeTableClick" text="상영 시간표" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+          <TitledPane animated="false" text="영화">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="7.0" onMouseClicked="#crntFilmClick" text="현재 상영작" />
+                        <Label layoutX="9.0" layoutY="22.0" onMouseClicked="#scheduledFilmClick" text="상영 예정작" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="영화관">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="7.0" onMouseClicked="#gyeongsanClick" text="경산" />
+                        <Label layoutX="9.0" layoutY="22.0" onMouseClicked="#gumiClick" text="구미공단" />
+                        <Label layoutX="9.0" layoutY="37.0" onMouseClicked="#daeguClick" text="대구광장" />
+                        <Label layoutX="9.0" layoutY="52.0" onMouseClicked="#dongSeongRoClick" text="동성로" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="내 정보">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="7.0" onMouseClicked="#myInfoClick" text="내 정보" />
+                        <Label layoutX="9.0" layoutY="22.0" onMouseClicked="#logOutClick" text="로그아웃" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <AnchorPane fx:id="mainPane" layoutX="102.0" prefHeight="288.0" prefWidth="453.0">
+         <children>
+            <Label layoutX="160.0" layoutY="129.0" text="환영합니다.">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
